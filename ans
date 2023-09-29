@@ -1,0 +1,70 @@
+
+**Question 1: Check if a number is symmetrical**
+```python
+def is_symmetrical(num):
+    num_str = str(num)
+    return num_str == num_str[::-1]
+    
+# Test cases
+print(is_symmetrical(7227))      # True
+print(is_symmetrical(12567))     # False
+print(is_symmetrical(44444444))  # True
+print(is_symmetrical(9939))      # False
+print(is_symmetrical(1112111))   # True
+```
+
+**Question 2: Multiply numbers in a string**
+```python
+def multiply_nums(numbers_str):
+    numbers = [int(num) for num in numbers_str.split(', ')]
+    product = 1
+    for num in numbers:
+        product *= num
+    return product
+
+# Test cases
+print(multiply_nums("2, 3"))          # 6
+print(multiply_nums("1, 2, 3, 4"))    # 24
+print(multiply_nums("54, 75, 453, 0")) # 0
+print(multiply_nums("10, -2"))        # -20
+```
+
+**Question 3: Square digits of a number**
+```python
+def square_digits(num):
+    num_str = str(num)
+    result = ''
+    for digit in num_str:
+        result += str(int(digit) ** 2)
+    return int(result)
+
+# Test cases
+print(square_digits(9119)) # 811181
+print(square_digits(2483)) # 416649
+print(square_digits(3212)) # 9414
+```
+
+**Question 4: Remove duplicates and sort a list**
+```python
+def setify(input_list):
+    return sorted(list(set(input_list)))
+
+# Test cases
+print(setify([1, 3, 3, 5, 5]))          # [1, 3, 5]
+print(setify([4, 4, 4, 4]))             # [4]
+print(setify([5, 7, 8, 9, 10, 15]))     # [5, 7, 8, 9, 10, 15]
+print(setify([3, 3, 3, 2, 1]))          # [1, 2, 3]
+```
+
+**Question 5: Calculate the mean of digits in a number**
+```python
+def mean(num):
+    num_str = str(num)
+    digits = [int(digit) for digit in num_str]
+    return sum(digits) // len(digits)
+
+# Test cases
+print(mean(42))     # 3
+print(mean(12345))  # 3
+print(mean(666))    # 6
+```
